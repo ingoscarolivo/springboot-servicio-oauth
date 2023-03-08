@@ -11,24 +11,24 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableFeignClients
 @EnableEurekaClient
 @SpringBootApplication
-public class SpringbootServicioOauthApplication implements CommandLineRunner {
+public class SpringbootServicioOauthApplication implements CommandLineRunner{
 
 	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
-
+	private BCryptPasswordEncoder passwordEncode;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootServicioOauthApplication.class, args);
 	}
 
-
 	@Override
 	public void run(String... args) throws Exception {
 		String password = "12345";
-
-		for (int i = 0; i < 4; i++){
-			String passwordBCrypt = passwordEncoder.encode(password);
-			System.out.println("passwordBCrypt = " + passwordBCrypt);
+		
+		for (int i = 0; i < 4; i++) {
+			String passwordBCrypt = passwordEncode.encode(password);
+			System.out.println(passwordBCrypt);
 		}
-
+		
 	}
+
 }
